@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+chroma_db/
+.DS_Store
+data/
+*.pdf
+extract_pdf.py
+.pytest_cache/
+.vscode/

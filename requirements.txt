@@ -1,0 +1,7 @@
+pandas
+openai
+chromadb
+flask
+python-dotenv
+sentence-transformers
+pytest
