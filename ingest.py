@@ -54,6 +54,19 @@ def load_data():
         sys.exit(1)
 
 def prepare_documents(texts):
+    documents = []
+    metadata_map = {}
+    
+    for i, text in enumerate(texts):
+    # Protection: if the text is very long (e.g., over 1500 characters), truncate it
+    # so it does not exceed the Embedding model's limit
+        safe_text = text[:1500] if len(text) > 1500 else text
+        
+        documents.append(safe_text)
+        metadata_map[i] = i
+    return documents, metadata_map
+
+def prepare_documents(texts):
     """
     Optionally chunk texts if they're very long
     """
@@ -75,6 +88,16 @@ def prepare_documents(texts):
         return texts, list(range(len(texts)))
 
 def create_embeddings(documents):
+    # If OpenAI was used, the embedding creation would look like this:
+"""
+def create_openai_embeddings(texts):
+    client = OpenAI(api_key=config.OPENAI_API_KEY)
+    response = client.embeddings.create(
+        input=texts,
+        model="text-embedding-3-small"
+    )
+    return [e.embedding for e in response.data]
+"""
     """
     Create embeddings using sentence-transformers (FREE, LOCAL)
     """

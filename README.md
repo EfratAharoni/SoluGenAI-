@@ -177,6 +177,7 @@ Average query latency: ~120ms
 * ChromaDB: Lightweight, persistent, no server or API key required
 * L2 Distance converted to normalized similarity score (0–1)
 * Flask chosen for simplicity and extensibility
+* Similarity Scoring: > ChromaDB by default uses L2 (Euclidean) distance. Since the assignment requires a similarity score (typically 0 to 1), I applied the formula 1 / (1 + distance). This ensures that a distance of 0 (identical) results in a score of 1, and as the distance increases, the score approaches 0.
 
 ---
 
