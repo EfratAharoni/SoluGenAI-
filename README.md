@@ -97,6 +97,12 @@ python app.py
 
 Access via: [http://localhost:5000](http://localhost:5000)
 
+
+---
+# Project Demo
+
+[Watch the demo video here](https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing)
+
 ---
 
 ## Usage
